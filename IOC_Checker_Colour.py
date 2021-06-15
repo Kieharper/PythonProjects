@@ -179,7 +179,7 @@ while repeat == 'y':
         print(colour.RED + "\n" + "IOC Detected in URL 16!")
         print(url16 + colour.END)
     else:
-        print("\n" + 'IOC Not found in URL search.')
+        print(colour.GREEN + "\n" + 'IOC Not found in URL search.' + colour.END)
 
     ################################ IP Blacklist Checker ################################
 
@@ -315,18 +315,17 @@ while repeat == 'y':
                 IOC = args.ip
             else:
                 my_ip = get('https://api.ipify.org').text
-                print(colour.YELLOW + colour.BOLD + "\n" + "IP Blacklist Check" + colour.END)
 
             # IP INFO
             reversed_dns = socket.getfqdn(IOC)
             geoip = get('http://api.hackertarget.com/geoip/?q='
                         + IOC).text
 
-            print('\nThe FQDN for {0} is {1}\n'.format(IOC, reversed_dns))
-            print('Geolocation IP Information:')
+            print(colour.DARKCYAN + '\nThe FQDN for {0} is {1}\n'.format(IOC, reversed_dns) + colour.END)
+            print(colour.DARKCYAN + 'Geolocation IP Information:')
             print(geoip)
-            print('\n')
-
+            print(colour.END + '\n')
+            print(colour.YELLOW + colour.BOLD + "IP Blacklist Check: \n" + colour.END)
             BAD = 0
             GOOD = 0
 
@@ -351,24 +350,24 @@ while repeat == 'y':
                     my_resolver.lifetime = 5
                     answers = my_resolver.query(query, "A")
                     answer_txt = my_resolver.query(query, "TXT")
-                    print((IOC + ' is listed in ' + bl)
+                    print((colour.RED + IOC + ' is listed in ' + bl + colour.END)
                           + ' (%s: %s)' % (answers[0], answer_txt[0]))
                     BAD = BAD + 1
 
                 except dns.resolver.NXDOMAIN:
-                    print(IOC + ' is not listed in ' + bl)
+                    print(colour.GREEN + IOC + ' is not listed in ' + bl + colour.END)
                     GOOD = GOOD + 1
 
                 except dns.resolver.Timeout:
-                    print('WARNING: Timeout querying ' + bl)
+                    print(colour.RED + 'WARNING: Timeout querying ' + bl + colour.END)
 
                 except dns.resolver.NoNameservers:
-                    print('WARNING: No nameservers for ' + bl)
+                    print(colour.RED + 'WARNING: No nameservers for ' + bl + colour.END)
 
                 except dns.resolver.NoAnswer:
-                    print('WARNING: No answer for ' + bl)
+                    print(colour.RED + 'WARNING: No answer for ' + bl + colour.END)
 
-            print('\n{0} is on {1}/{2} blacklists.\n'.format(IOC, BAD, (GOOD + BAD)))
+            print(colour.RED + colour.BOLD + '\n{0} is on {1}/{2} blacklists.\n'.format(IOC, BAD, (GOOD + BAD)) + colour.END)
 
             print('Waiting 5 seconds before continuing..')
             time.sleep(5)
