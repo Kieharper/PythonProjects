@@ -452,19 +452,6 @@ while repeat == 'y':
 
     ################################ URLScan API Search - https://urlscan.io/ ################################
 
-    ################################ FraudGuard API Search - https://app.fraudguard.io/ ################################
-
-    print("\nFraudGuard Results: (https://app.fraudguard.io/)\n")
-
-    ip = requests.get('https://api.fraudguard.io/v2/ip/' + IOC, verify=True,
-                      auth=HTTPBasicAuth('6xocMVSaRZa2d4p0', 'KtbU72FmmNsQChVw'))
-    decodedResponse = json.loads(ip.text)
-    print(json.dumps(decodedResponse, sort_keys=True, indent=4))
-
-    print("Result: https://fraudguard.io/?ip=" + IOC)
-
-    ################################ FraudGuard API Search - https://app.fraudguard.io/ ################################
-
     ################################ Links ################################
 
     # Define the window's contents
