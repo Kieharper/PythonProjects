@@ -165,6 +165,7 @@ while repeat == 'y':
             if detections >= 1:
                 scan_results = response['scans']
 
+                print(colour.BOLD + '\n---- File Hash Check ----' + colour.END)
                 print(colour.BOLD + ('\nAV Name, Malware Name') + colour.END)
                 for vendor in scan_results:
                     if scan_results[vendor]['detected']:
@@ -177,7 +178,6 @@ while repeat == 'y':
                 print(colour.GREEN + '\nNo malicious detections found.' + colour.END)
 
         if True:
-            print(colour.BOLD + '\n----- File Hash Check ------' + colour.END)
             filehash = IOC
             get_hash_report(apikey, filehash)
             continue
@@ -466,21 +466,6 @@ while repeat == 'y':
         print("Engine Detections:", f["lookup_results"]["detected_by"],"out of 6",'(OPSWAT)')
     except:
         print('Engine Detections: 0 out of 6 (OPSWAT)')
-
-    ################################ JSON Parse ################################
-
-    ################################ URLScan API Search - https://urlscan.io/ ################################
-
-    #print("\nURLScan Results: https://urlscan.io/" + IOC + "\n")
-
-
-
-    ################################ URLScan API Search - https://urlscan.io/ ################################
-
-    ################################ JSON Parse ################################
-
-    f = decodedResponse
-
 
     ################################ JSON Parse ################################
 
