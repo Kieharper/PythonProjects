@@ -5,7 +5,7 @@ Python projects &amp; tools.
 
 **IOC_Checker.py** 
 
-Used to check IOC's such as IP reputation and File Hashes for AV detections and types. 
+Used to check IPs for IP reputation or File Hashes for AV detections and malware information.
 
 Please ensure you replace **"< API Key >"** with the relevant API key.
 
