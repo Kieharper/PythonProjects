@@ -392,8 +392,6 @@ while repeat == 'y':
 
         ################################ Virus Total search ################################
 
-        #print("\nVirusTotal Results: https://www.virustotal.com/gui/ip-address/"+IOC+"/detection" + "\n")
-
         url = 'https://www.virustotal.com/vtapi/v2/ip-address/report'
 
         params = {'apikey': '<API Key>', 'ip': IOC} #Insert API key here
@@ -411,8 +409,6 @@ while repeat == 'y':
         ################################ Virus Total search ################################
 
         ################################ AbuseIPDB API Search - https://www.abuseipdb.com/ ################################
-
-        #print("\nAbuseIPDB Results: https://www.abuseipdb.com/" + IOC + "\n")
 
         url = 'https://api.abuseipdb.com/api/v2/check'
 
@@ -444,8 +440,6 @@ while repeat == 'y':
 
         ################################ OPSWAT API Search - https://metadefender.opswat.com/?lang=en ################################
 
-        ##print("\nOPSWAT Results: https://metadefender.opswat.com/?lang=en" + "\n")
-
         url = "https://api.metadefender.com/v4/ip/" + IOC
 
         headers = {
@@ -469,8 +463,6 @@ while repeat == 'y':
         ################################ OPSWAT API Search - https://metadefender.opswat.com/?lang=en ################################
 
         ################################ GreyNoise API ################################
-
-        #print("\nGreyNoise Results: https://viz.greynoise.io/query/?gnql=" + IOC + "\n")
 
         url = "https://api.greynoise.io/v3/community/" + IOC
 
