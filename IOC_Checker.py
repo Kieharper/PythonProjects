@@ -384,7 +384,7 @@ while repeat == 'y':
                 except dns.resolver.NoAnswer:
                     print('WARNING: No answer for ' + bl)
 
-            print('\n{0} is on {1}/{2} blacklists.'.format(IOC, BAD, (GOOD + BAD)))
+            print('{0} is on {1}/{2} blacklists.'.format(IOC, BAD, (GOOD + BAD)))
 
         ################################ IP Blacklist Checker ################################
 
