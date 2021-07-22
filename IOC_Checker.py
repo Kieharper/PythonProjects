@@ -181,12 +181,12 @@ while repeat == 'y':
         try:
             print("Malware family:", f["malware_family"], '(OPSWAT)')
         except:
-            print('Mlaware family: N/A (OPSWAT)')
+            print('Malware family: N/A (OPSWAT)')
         try:
             print("Malware Type:", f["malware_type"][0], '(OPSWAT)')
             print("Malware Type:", f["malware_type"][1], '(OPSWAT)')
         except:
-            print('Mlaware Type: N/A (OPSWAT)')
+            print('Malware Type: N/A (OPSWAT)')
         try:
             print("AV Detections:", f["scan_results"]["total_detected_avs"], '(OPSWAT)')
         except:
