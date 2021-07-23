@@ -1,4 +1,4 @@
-print('Version | 1.0 |')
+print('Version | 1.1 |')
 print('Author  | Kieran Harper |')
 
 import os
