@@ -1,3 +1,5 @@
+#Credit to Heath Adams (The CyberMentor) for his 'Practical Ethical Hacking - The Complete Course'.
+
 import sys
 import socket
 from datetime import datetime
